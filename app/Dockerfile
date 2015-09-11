@@ -12,4 +12,5 @@ RUN test -d /opt/app/run/ || mkdir -p /opt/app/run/
 RUN useradd -ms /bin/bash django
 RUN chown -R django:django /opt/app/
 
-CMD ["uwsgi", "--ini", "/src/app/uwsgi.ini"]
+# CMD ["uwsgi", "--ini", "/src/app/uwsgi.ini"]
+CMD uwsgi --ini /src/app/uwsgi.ini
