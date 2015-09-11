@@ -3,19 +3,18 @@ db:
 
 appsvr:
   build: ./app
-  # dockerfile: "Dockerfile.dev"
   volumes:
+    - ./app:/src/app
     - /opt/app
   links:
     - db
 
 nginx:
-  restart: always
   build: ./nginx
   ports:
     - "8000:8000"
   volumes:
-    - /www/public
+    - ./app:/src/app
   volumes_from:
     - appsvr
   links:
