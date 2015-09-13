@@ -6,10 +6,6 @@
       "host": {
         "sourcePath": "/var/app/current/app/"
       }
-    },
-    {
-      "name": "empty",
-      "host": {}
     }
   ],
   "containerDefinitions": [
@@ -27,10 +23,6 @@
         {
           "sourceVolume": "appcode",
           "containerPath": "/src/app/"
-        },
-        {
-          "sourceVolume": "empty",
-          "containerPath": "/opt/app/"
         }
       ],
       "links": [
@@ -52,11 +44,6 @@
         {
           "sourceVolume": "appcode",
           "containerPath": "/src/app/"
-        }
-      ],
-      "volumesFrom": [
-        {
-          "sourceContainer": "appsvr"
         }
       ],
       "links": [
